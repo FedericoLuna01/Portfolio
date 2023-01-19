@@ -1,0 +1,74 @@
+/* eslint-disable react/react-in-jsx-scope */
+import { Heading, Image, Stack, Text } from '@chakra-ui/react'
+
+export const Technologies = () => {
+  return (
+    <Stack
+        bg={'secondary.900'}
+        minHeight={'100vh'}
+        justify='center'
+        align='center'
+        gap={5}
+        id='technologies'
+    >
+        <Heading
+            as='h3'
+            color={'primary.500'}
+        >
+            Stack
+        </Heading>
+        <Text
+          color='white'
+        >
+          Estas son las tecnologías con las que más cómodo me siento trabajando.
+        </Text>
+        <Stack
+          bg='secondary.500'
+          p={4}
+          px={10}
+          borderRadius='lg'
+          align='center'
+          justify='space-evenly'
+          direction='row'
+          gap={5}
+          wrap='wrap'
+        >
+          <Image
+            boxSize='50px'
+            src='/images/icons/html-5.svg'
+            alt='HTML5'
+          />
+          <Image
+            boxSize='45px'
+            src='/images/icons/css3.svg'
+            alt='css3'
+          />
+          <Image
+            boxSize='40px'
+            src='/images/icons/javascript.svg'
+            alt='javascript'
+          />
+          <Image
+            boxSize='45px'
+            src='/images/icons/react.svg'
+            alt='react'
+          />
+          <Image
+            boxSize='45px'
+            src='/images/icons/nodejs.svg'
+            alt='nodejs'
+          />
+          <Image
+            boxSize='45px'
+            src='/images/icons/tailwind.svg'
+            alt='tailwind'
+          />
+          <Image
+            boxSize='45px'
+            src='/images/icons/chakraui.svg'
+            alt='chakraui'
+          />
+        </Stack>
+    </Stack>
+  )
+}
