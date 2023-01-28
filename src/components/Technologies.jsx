@@ -10,6 +10,8 @@ export const Technologies = () => {
         align='center'
         gap={5}
         id='technologies'
+        px={{ base: 4, md: 10, lg: 20, xl: 32, '2xl': '72' }}
+        textAlign={{ base: 'center', md: 'left' }}
     >
         <Heading
             as='h3'
@@ -32,6 +34,7 @@ export const Technologies = () => {
           direction='row'
           gap={5}
           wrap='wrap'
+          boxShadow='dark-lg'
         >
           <Image
             boxSize='50px'
@@ -66,6 +69,34 @@ export const Technologies = () => {
           <Image
             boxSize='45px'
             src='/images/icons/chakraui.svg'
+            alt='chakraui'
+          />
+        </Stack>
+        <Text
+          color='white'
+        >
+          Estas son algunas de las tecnologias que estoy interesando en aprender.
+        </Text>
+        <Stack
+          bg='secondary.500'
+          p={4}
+          px={10}
+          borderRadius='lg'
+          align='center'
+          justify='space-evenly'
+          direction='row'
+          gap={5}
+          wrap='wrap'
+          boxShadow='dark-lg'
+        >
+          <Image
+            boxSize='45px'
+            src='/images/icons/typescript.svg'
+            alt='chakraui'
+          />
+          <Image
+            boxSize='45px'
+            src='/images/icons/next-js.svg'
             alt='chakraui'
           />
         </Stack>

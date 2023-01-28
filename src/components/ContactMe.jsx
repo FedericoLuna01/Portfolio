@@ -1,7 +1,53 @@
-import { Heading, Stack, Image, FormControl, FormLabel, Input, Textarea, Button } from '@chakra-ui/react'
+import { Heading, Stack, Image, FormControl, FormLabel, Input, Textarea, Button, useToast } from '@chakra-ui/react'
+import { useState } from 'react'
+import { Networks } from './Networks'
+import emailjs from '@emailjs/browser'
 
 /* eslint-disable react/react-in-jsx-scope */
 export const ContactMe = () => {
+  const toast = useToast()
+  const errorToast = useToast()
+
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    const id = 'error-id'
+
+    if (name.trim() === '' || email.trim() === '' || message.trim() === '') {
+      if (!errorToast.isActive(id)) {
+        errorToast({
+          id,
+          description: 'Todos los campos son obligatorios',
+          status: 'error',
+          isClosable: true
+        })
+      }
+      return
+    }
+
+    const templateParams = {
+      from_name: name,
+      email_id: email,
+      message
+    }
+
+    // enviar mail
+    emailjs.send('service_fto3zm3', 'template_eydzle2', templateParams, '4GAmw2mHWkbgCfFwq')
+
+    toast({
+      description: 'Mensaje enviado correctamente',
+      status: 'success',
+      isClosable: true
+    })
+    setName('')
+    setEmail('')
+    setMessage('')
+  }
+
   return (
     <Stack
         id='contact'
@@ -11,6 +57,8 @@ export const ContactMe = () => {
         justify='center'
         gap={20}
         px={10}
+        pb={40}
+        pt={ 32 }
     >
         <Heading
             as='h3'
@@ -22,6 +70,7 @@ export const ContactMe = () => {
             bg='secondary.500'
             borderRadius='lg'
             align='center'
+            boxShadow='dark-lg'
             px={20}
             py={2}
         >
@@ -30,23 +79,18 @@ export const ContactMe = () => {
                 size='md'
                 color='white'
                 fontWeight='normal'
+                textAlign='center'
             >
                 Mis redes
             </Heading>
             <Stack
-                justify='space-between'
+                justify='space-evenly'
                 direction='row'
+                align='center'
+                gap={5}
+                wrap='wrap'
             >
-                <Image
-                    src='/images/icons/github.svg'
-                    boxSize='40px'
-                    sx={{ fill: '#ffffff' }}
-                />
-                <Image
-                    src='/images/icons/github.svg'
-                    boxSize='40px'
-                    sx={{ fill: '#ffffff' }}
-                />
+                <Networks />
             </Stack>
         </Stack>
         <Stack
@@ -55,6 +99,7 @@ export const ContactMe = () => {
             borderRadius='lg'
             align='center'
             gap={5}
+            boxShadow='dark-lg'
         >
             <Heading
                 as='h4'
@@ -65,14 +110,15 @@ export const ContactMe = () => {
                 Escribime un Email
             </Heading>
             <Stack
-                direction='row'
                 gap={10}
                 align='center'
+                flexDirection={{ base: 'column-reverse', md: 'row' }}
             >
                 <Stack>
                     <Image
                         boxSize={300}
                         src='/images/mail_send.png'
+                        h={{ base: 200, md: 300 }}
                     />
                 </Stack>
                 <Stack>
@@ -80,7 +126,8 @@ export const ContactMe = () => {
                         as='form'
                         display='flex'
                         flexDirection='column'
-                        minW={300}
+                        w={{ base: 200, md: 400 }}
+                        onSubmit={handleSubmit}
                     >
                         <FormLabel
                             color='white'
@@ -94,7 +141,8 @@ export const ContactMe = () => {
                             border='none'
                             placeholder='Ingrese su nombre...'
                             _placeholder={{ color: 'white' }}
-                            autoFocus
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
                         />
                         <FormLabel
                             color='white'
@@ -110,6 +158,8 @@ export const ContactMe = () => {
                             border='none'
                             placeholder='Ingrese su correo...'
                             _placeholder={{ color: 'white' }}
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                         />
                         <FormLabel
                             color='white'
@@ -126,6 +176,8 @@ export const ContactMe = () => {
                             _placeholder={{ color: 'white' }}
                             rows={5}
                             resize='none'
+                            value={message}
+                            onChange={e => setMessage(e.target.value)}
                         />
                         <Button
                             bg='primary.500'

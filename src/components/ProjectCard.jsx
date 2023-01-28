@@ -1,75 +1,106 @@
-import { Badge, Button, ButtonGroup, Card, CardBody, CardFooter, Heading, Image, Link, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Stack, useDisclosure } from '@chakra-ui/react'
-
+/* eslint-disable react/prop-types */
 /* eslint-disable react/react-in-jsx-scope */
-export const ProjectCard = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure()
+import { Badge, Button, ButtonGroup, Card, CardBody, CardFooter, Heading, Image, Link, LinkBox, LinkOverlay, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Stack, Text, useDisclosure } from '@chakra-ui/react'
+import Carousel from 'nuka-carousel/lib/carousel'
+import { getTechnologyColor } from '../helpers/getColor'
 
+export const ProjectCard = ({ project }) => {
+  const { isOpen, onOpen, onClose } = useDisclosure()
   return (
         <Card
             bg='secondary.500'
+            // maxW={{ base: '300px', sm: 'sm' }}
             maxW='sm'
+            zIndex={1}
+            boxShadow='dark-lg'
         >
             <CardBody>
-                <Image
-                    src='/images/proyecto1.png'
-                    objectFit='cover'
-                    borderRadius='lg'
-                />
-                <Stack>
+                <LinkBox>
+                    <LinkOverlay
+                        href={ project.github }
+                        target='_blank'
+                        _hover={{ opacity: 0.8 }}
+                    >
+                        <Image
+                            src={ project.thumbnail }
+                            alt={ project.name }
+                            objectFit='cover'
+                            borderRadius='lg'
+                        />
+                    </LinkOverlay>
+                </LinkBox>
+                <Stack
+                    gap={1}
+                >
                     <Heading
                         color='white'
                         as='h4'
-                        size='md'
+                        fontSize='25px'
                         mt={3}
                     >
-                        Proyecto 1
+                        {project.name}
                     </Heading>
                     <Stack
                         direction='row'
+                        align='center'
+                        wrap={'wrap'}
                     >
-                        <Badge
+                        {
+                            project.technologies.map((technology, index) => (
+                                <Badge
+                            key={index}
                             variant='outline'
-                            colorScheme='yellow'
+                            colorScheme={ getTechnologyColor(technology) }
                             borderRadius={4}
                             px='5px'
                             py='2px'
                         >
-                            Javascript
+                            {technology}
                         </Badge>
-                        <Badge
-                            variant='outline'
-                            colorScheme='orange'
-                            borderRadius={4}
-                            px='5px'
-                            py='2px'
-                        >
-                            HTML
-                        </Badge>
-                        <Badge
-                            variant='outline'
-                            colorScheme='cyan'
-                            borderRadius={4}
-                            px='5px'
-                            py='2px'
-                        >
-                            REACT
-                        </Badge>
+                            ))
+                        }
                     </Stack>
-                    {/* modal */}
-                    <Button
+                    <Link
+                        color='primary.100'
+                        fontWeight='bold'
                         onClick={onOpen}
                     >
                         Mas información...
-                    </Button>
+                    </Link>
                     <Modal isOpen={isOpen} onClose={onClose} size='md'>
                         <ModalOverlay />
                         <ModalContent bg='secondary.500' color='white'>
-                        <ModalHeader>Proyecto 1</ModalHeader>
+                        <ModalHeader>{ project.name }</ModalHeader>
                         <ModalCloseButton />
                         <ModalBody>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat a necessitatibus, vel voluptates odio quo? Perspiciatis illum quod beatae quibusdam!
+                            <Carousel
+                                defaultControlsConfig={{
+                                  nextButtonText: '>',
+                                  nextButtonStyle: {
+                                    fontWeight: 'bold'
+                                  },
+                                  prevButtonText: '<',
+                                  prevButtonStyle: {
+                                    fontWeight: 'bold'
+                                  },
+                                  pagingDotsStyle: {
+                                    fill: 'white',
+                                    margin: '0 5px'
+                                  }
+                                }}
+                            >
+                                {
+                                    project.carousel_images.map((image, index) => (
+                                        <img key={index} src={image} alt={`carousel image ${index}`} />
+                                    ))
+                                }
+                            </Carousel>
+                            <Text
+                                mt={5}
+                            >
+                                {project.description}
+                            </Text>
                         </ModalBody>
-
                         <ModalFooter>
                             <Button
                                 bg='primary.500'
@@ -77,7 +108,7 @@ export const ProjectCard = () => {
                                 mr={3}
                                 onClick={onClose}
                             >
-                            Cerrar
+                                Cerrar
                             </Button>
                         </ModalFooter>
                         </ModalContent>
@@ -88,9 +119,10 @@ export const ProjectCard = () => {
                     >
                         <ButtonGroup
                             flex={1}
+                            color= 'white'
                         >
                             <Button
-                                href='https://youtube.com'
+                                href={ project.github }
                                 target={'_blank'}
                                 as={Link}
                                 bg='primary.500'
@@ -98,14 +130,14 @@ export const ProjectCard = () => {
                                 w='50%'
                             >
                                 <Image
-                                    src='/images/icons/github.svg'
+                                    src='/images/icons/github_w.svg'
                                     boxSize='20px'
                                     mr={2}
                                 />
                                 Repositorio
                             </Button>
                             <Button
-                                href='https://youtube.com'
+                                href={ project.web }
                                 target={'_blank'}
                                 as={Link}
                                 bg='primary.500'
