@@ -11,23 +11,23 @@ export const projects = [
   },
   {
     id: 2,
-    name: 'Buscador de Recetas',
-    description: 'Este es mi portfolio, diseñado por mí mismo, con el fin de mostrar mis habilidades como desarrollador web. El proyecto fue dessarrollado principalmente con React y ChakraUI',
-    technologies: ['HTML', 'Javascript', 'Bootsrap'],
-    thumbnail: '/images/BuscadorRecetas-1.png',
-    carousel_images: ['/images/BuscadorRecetas-1.png', '/images/BuscadorRecetas-2.png', '/images/BuscadorRecetas-3.png', '/images/BuscadorRecetas-4.png'],
+    name: 'Countries Rest',
+    description: 'Esta aplicación es un challenge de FrontEndMentor, donde se consume la api de Rest Countries. Se permite buscar países, filtrarlos por region y ver sus detalles. El proyecto fue desarrollado con React y Chakra UI.',
+    technologies: ['React', 'Chakra UI'],
+    thumbnail: '/images/CountriesRest-1.png',
+    carousel_images: ['/images/CountriesRest-1.png', '/images/CountriesRest-2.png', '/images/CountriesRest-3.png', '/images/CountriesRest-4.png'],
     web: '',
-    github: ''
+    github: 'https://github.com/FedericoLuna01/CountriesApp'
   },
   {
     id: 3,
     name: 'Asistente de Pacientes',
-    description: 'asdojiajosd aosidj aoisjd aoisj aoisj doiajsod ijasoij daoijs oiaj iodjaiosj dioajs iodjaoisj dojaoijsjidasoj joa joisdjoa osida osijd asd',
+    description: 'Esta aplicación fue creada en el curso de JavaScript de Juan Pablo de la Torre Valdez. La aplicación permite crear, editar y eliminar pacientes. El proyecto fue desarrollado con React, Tailwind. Contiene rutas protegidas y un login, donde cada persona puede crear una cuenta y guardar sus pacientes. En cuanto al BackEnd está desarrollado con express y mongoDB.',
     technologies: ['React', 'Tailwind', 'MongoDB'],
     thumbnail: '/images/APV-1.png',
     carousel_images: ['/images/APV-1.png', '/images/APV-2.png', '/images/APV-3.png', '/images/APV-4.png'],
     web: '',
-    github: ''
+    github: 'https://github.com/FedericoLuna01/APV-FrontEnd'
   }
 ]
 
@@ -40,7 +40,7 @@ export const moreProjects = [
     thumbnail: '/images/CotizadorCrypto-1.png',
     carousel_images: ['/images/CotizadorCrypto-1.png', '/images/CotizadorCrypto-2.png'],
     web: '',
-    github: ''
+    github: 'https://github.com/FedericoLuna01/cotizadorCripto'
   },
   {
     id: 2,
@@ -50,6 +50,16 @@ export const moreProjects = [
     thumbnail: '/images/gif-app-1.png',
     carousel_images: ['/images/gif-app-1.png', '/images/gif-app-2.png', '/images/gif-app-3.png'],
     web: '',
-    github: ''
+    github: 'https://github.com/FedericoLuna01/GifApp'
+  },
+  {
+    id: 3,
+    name: 'Buscador de Recetas',
+    description: 'Esta aplicación fue desarrollada en el curso de Udemy de JavaScript de Juan Pablo de la Torre Valdez. La aplicación consume la API de TheMealDB y permite buscar recetas de comida. El proyecto fue desarrollado con JavaScript Vanilla y Bootsrap.',
+    technologies: ['HTML', 'Javascript', 'Bootsrap'],
+    thumbnail: '/images/BuscadorRecetas-1.png',
+    carousel_images: ['/images/BuscadorRecetas-1.png', '/images/BuscadorRecetas-2.png', '/images/BuscadorRecetas-3.png', '/images/BuscadorRecetas-4.png'],
+    web: '',
+    github: 'https://github.com/FedericoLuna01/BuscadorDeRecetas'
   }
 ]

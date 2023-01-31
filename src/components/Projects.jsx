@@ -18,6 +18,7 @@ export const Projects = () => {
         justify='center'
         gap={20}
         px={{ base: 4, md: 10, lg: 20, xl: 32, '2xl': '72' }}
+        pt={20}
     >
         <Heading
             as='h3'

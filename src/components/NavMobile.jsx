@@ -5,12 +5,10 @@ import { Menu } from './Menu'
 /* eslint-disable react/react-in-jsx-scope */
 export const NavMobile = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const btnRef = React.useRef()
   return (
     <>
       <Button
         colorScheme='secondary'
-        ref={btnRef}
         onClick={onOpen}
         p={2}
       >
@@ -24,8 +22,8 @@ export const NavMobile = () => {
         placement='top'
         isOpen={isOpen}
         onClose={onClose}
-        finalFocusRef={btnRef}
-        >
+        preserveScrollBarGap={true}
+      >
         <DrawerOverlay />
         <DrawerContent
           bg='secondary.500'
@@ -39,6 +37,7 @@ export const NavMobile = () => {
                 align='center'
                 mt={10}
                 gap={5}
+                pb={5}
               >
                 <Menu onClose={onClose}/>
               </Stack>

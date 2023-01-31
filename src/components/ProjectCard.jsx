@@ -137,11 +137,12 @@ export const ProjectCard = ({ project }) => {
                                 Repositorio
                             </Button>
                             <Button
-                                href={ project.web }
-                                target={'_blank'}
+                                _hover={{ bg: 'primary.100' }}
                                 as={Link}
                                 bg='primary.500'
-                                _hover={{ bg: 'primary.100' }}
+                                href={ project.web }
+                                isDisabled={ project.web === '' }
+                                target={'_blank'}
                                 w='50%'
                             >
                                 <Image

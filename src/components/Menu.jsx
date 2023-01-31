@@ -3,19 +3,12 @@
 import { Button, Link } from '@chakra-ui/react'
 
 export const Menu = (props = null) => {
-  const { onClose } = props
-
-  const handleClick = () => {
-    onClose()
-    window.scrollTo(0, 100)
-  }
-
   return (
     <>
         <Link
             color="white"
             href="#about"
-            onClick={handleClick}
+            value='asd'
         >
             Sobre mi
         </Link>
