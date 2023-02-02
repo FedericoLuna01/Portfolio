@@ -17,7 +17,7 @@ export const ProjectCard = ({ project }) => {
             <CardBody>
                 <LinkBox>
                     <LinkOverlay
-                        href={ project.github }
+                        href={ project.web !== '' ? project.web : project.github }
                         target='_blank'
                         _hover={{ opacity: 0.8 }}
                     >
@@ -141,7 +141,7 @@ export const ProjectCard = ({ project }) => {
                                 as={Link}
                                 bg='primary.500'
                                 href={ project.web }
-                                isDisabled={ project.web === '' }
+                                isDisabled={ project.web === null }
                                 target={'_blank'}
                                 w='50%'
                             >
