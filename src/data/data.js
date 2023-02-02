@@ -6,7 +6,7 @@ export const projects = [
     technologies: ['React', 'Tailwind', 'React Router DOM'],
     thumbnail: '/images/heroes-app-1.png',
     carousel_images: ['/images/heroes-app-1.png', '/images/heroes-app-2.png', '/images/heroes-app-3.png'],
-    web: '',
+    web: 'https://encontratuheroe.netlify.app',
     github: 'https://github.com/FedericoLuna01/HeroesApp'
   },
   {
@@ -16,7 +16,7 @@ export const projects = [
     technologies: ['React', 'Chakra UI'],
     thumbnail: '/images/CountriesRest-1.png',
     carousel_images: ['/images/CountriesRest-1.png', '/images/CountriesRest-2.png', '/images/CountriesRest-3.png', '/images/CountriesRest-4.png'],
-    web: '',
+    web: 'https://findyourcontry.netlify.app',
     github: 'https://github.com/FedericoLuna01/CountriesApp'
   },
   {
@@ -26,7 +26,7 @@ export const projects = [
     technologies: ['React', 'Tailwind', 'MongoDB'],
     thumbnail: '/images/APV-1.png',
     carousel_images: ['/images/APV-1.png', '/images/APV-2.png', '/images/APV-3.png', '/images/APV-4.png'],
-    web: '',
+    web: null,
     github: 'https://github.com/FedericoLuna01/APV-FrontEnd'
   }
 ]
@@ -39,7 +39,7 @@ export const moreProjects = [
     technologies: ['HTML', 'Javascript', 'CSS'],
     thumbnail: '/images/CotizadorCrypto-1.png',
     carousel_images: ['/images/CotizadorCrypto-1.png', '/images/CotizadorCrypto-2.png'],
-    web: '',
+    web: 'https://cotiza-mi-cripto.netlify.app',
     github: 'https://github.com/FedericoLuna01/cotizadorCripto'
   },
   {
@@ -49,7 +49,7 @@ export const moreProjects = [
     technologies: ['React', 'Tailwind'],
     thumbnail: '/images/gif-app-1.png',
     carousel_images: ['/images/gif-app-1.png', '/images/gif-app-2.png', '/images/gif-app-3.png'],
-    web: '',
+    web: 'https://gifeate.netlify.app',
     github: 'https://github.com/FedericoLuna01/GifApp'
   },
   {
@@ -59,7 +59,7 @@ export const moreProjects = [
     technologies: ['HTML', 'Javascript', 'Bootsrap'],
     thumbnail: '/images/BuscadorRecetas-1.png',
     carousel_images: ['/images/BuscadorRecetas-1.png', '/images/BuscadorRecetas-2.png', '/images/BuscadorRecetas-3.png', '/images/BuscadorRecetas-4.png'],
-    web: '',
+    web: 'https://recetazas.netlify.app',
     github: 'https://github.com/FedericoLuna01/BuscadorDeRecetas'
   }
 ]
