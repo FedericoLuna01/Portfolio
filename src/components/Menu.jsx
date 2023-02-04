@@ -9,28 +9,24 @@ export const Menu = (props = null) => {
         <Link
             color="white"
             href="#about"
-            onClick={onClose}
         >
             Sobre mi
         </Link>
         <Link
             color="white"
             href="#technologies"
-            onClick={onClose}
         >
             Tecnologías
         </Link>
         <Link
             color="white"
             href="#projects"
-            onClick={onClose}
         >
             Proyectos
         </Link>
         <Link
             color="white"
             href="#contact"
-            onClick={onClose}
         >
             Contactáme
         </Link>
