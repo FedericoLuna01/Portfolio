@@ -23,6 +23,7 @@ export const NavMobile = () => {
         isOpen={isOpen}
         onClose={onClose}
         preserveScrollBarGap={true}
+        trapFocus={false}
       >
         <DrawerOverlay />
         <DrawerContent
