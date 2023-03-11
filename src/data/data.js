@@ -35,12 +35,12 @@ export const moreProjects = [
   {
     id: 1,
     name: 'Cotizador de Crypto',
-    description: 'Este proyecto fue realizado en el curso de JavaScript de Juan Pablo de la Torre Valdez. La aplicación consume API donde permite cotizar el precio de las criptomonedas en tiempo real. El proyecto fue desarrollado con HTML y JavaScript Vanilla.',
-    technologies: ['HTML', 'Javascript', 'CSS'],
-    thumbnail: '/images/CotizadorCrypto-1.png',
-    carousel_images: ['/images/CotizadorCrypto-1.png', '/images/CotizadorCrypto-2.png'],
-    web: 'https://cotiza-mi-cripto.netlify.app',
-    github: 'https://github.com/FedericoLuna01/cotizadorCripto'
+    description: 'Este proyecto es una idea tomada de un video de YouTube. La aplicación consume la API de CoinGecko y permite buscar las criptomonedas que quieras y ver su cotización. El proyecto fue desarrollado con React, Chakra UI y React router dom.',
+    technologies: ['React', 'Chakra UI', 'React Router DOM'],
+    thumbnail: '/images/cryptotracker-1.png',
+    carousel_images: ['/images/cryptotracker-1.png', '/images/cryptotracker-2.png'],
+    web: 'https://howismycrypto.netlify.app',
+    github: 'https://github.com/FedericoLuna01/Cryptocurrencies'
   },
   {
     id: 2,
@@ -61,5 +61,15 @@ export const moreProjects = [
     carousel_images: ['/images/BuscadorRecetas-1.png', '/images/BuscadorRecetas-2.png', '/images/BuscadorRecetas-3.png', '/images/BuscadorRecetas-4.png'],
     web: 'https://recetazas.netlify.app',
     github: 'https://github.com/FedericoLuna01/BuscadorDeRecetas'
+  },
+  {
+    id: 4,
+    name: 'URL Shortener',
+    description: 'Este proyecto es un Challenge de la página FrontEndMentor. La aplicación consume una API que permite crear un link corto a partir de un link largo. La aplicatión fue desarrollada con React y Chakra UI.',
+    technologies: ['React', 'Chakra UI'],
+    thumbnail: '/images/link-shortening-1.png',
+    carousel_images: ['/images/link-shortening-1.png', '/images/link-shortening-2.png', '/images/link-shortening-3.png', '/images/link-shortening-4.png'],
+    web: 'https://fedeurlshortening.netlify.app',
+    github: 'https://github.com/FedericoLuna01/URLShortening'
   }
 ]

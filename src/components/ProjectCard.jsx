@@ -91,7 +91,12 @@ export const ProjectCard = ({ project }) => {
                             >
                                 {
                                     project.carousel_images.map((image, index) => (
-                                        <img key={index} src={image} alt={`carousel image ${index}`} />
+                                        <img
+                                        key={index}
+                                        src={image}
+                                        alt={`carousel image 
+                                        ${index}`}
+                                        />
                                     ))
                                 }
                             </Carousel>
