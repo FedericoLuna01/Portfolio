@@ -1,14 +1,15 @@
 /* eslint-disable react/react-in-jsx-scope */
-import { Button, Heading, Stack } from '@chakra-ui/react'
+import { Button, Collapse, Heading, Stack } from '@chakra-ui/react'
 import { ProjectCard } from './ProjectCard'
 import { projects, moreProjects } from '../data/data'
 import { useState } from 'react'
 
 export const Projects = () => {
-  const [showMoreProjects, setShowMoreProjects] = useState(false)
-  const handleMoreProjects = () => {
-    setShowMoreProjects(!showMoreProjects)
-  }
+//   const [showMoreProjects, setShowMoreProjects] = useState(false)
+  const [show, setShow] = useState(false)
+
+  const handleToggle = () => setShow(!show)
+
   return (
     <Stack
         id='projects'
@@ -35,19 +36,26 @@ export const Projects = () => {
             {
                 projects.map(project => <ProjectCard key={project.id} project={project}/>)
             }
-            {
-                showMoreProjects && (
-                  moreProjects.map(project => <ProjectCard key={project.id} animation='animate__animated animate__fadeOut' project={project}/>)
-                )
-            }
+            <Collapse in={show}>
+                <Stack
+                    gap={6}
+                    wrap='wrap'
+                    justify='space-evenly'
+                    direction={{ base: 'column', md: 'row' }}
+                >
+                    {
+                        moreProjects.map(project => <ProjectCard key={project.id} animation='animate__animated animate__fadeOut' project={project}/>)
+                    }
+                </Stack>
+            </Collapse>
         </Stack>
         <Button
             bg={'primary.500'}
             color={'white'}
             _hover={{ bg: 'primary.100' }}
-            onClick={handleMoreProjects}
+            onClick={handleToggle}
         >
-            Ver {showMoreProjects ? 'menos' : 'más'} proyectos
+            Ver {show ? 'menos' : 'más'} proyectos
         </Button>
     </Stack>
   )
