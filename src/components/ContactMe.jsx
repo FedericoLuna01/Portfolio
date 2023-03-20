@@ -36,7 +36,11 @@ export const ContactMe = () => {
     }
 
     // enviar mail
-    emailjs.send(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_EMAIL_TEMPLATE, templateParams, import.meta.env.VITE_ID)
+    const VITE_SERVICE_ID = import.meta.env.VITE_SERVICE_ID
+    const VITE_EMAIL_TEMPLATE = import.meta.env.VITE_EMAIL_TEMPLATE
+    const VITE_ID = import.meta.env.VITE_ID
+
+    emailjs.send(VITE_SERVICE_ID, VITE_EMAIL_TEMPLATE, templateParams, VITE_ID)
 
     toast({
       description: 'Mensaje enviado correctamente',
