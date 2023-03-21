@@ -29,6 +29,7 @@ export const Menu = ({ onClose }) => {
                 color='white'
                 key={`${item.section}-${index}`}
                 href={item.section}
+                alt={item.title}
                 onClick={onClose}
             >
                 {item.title}
@@ -38,6 +39,9 @@ export const Menu = ({ onClose }) => {
             bg={'primary.500'}
             color={'white'}
             _hover={{ bg: 'primary.100' }}
+            as='a'
+            href='../download/federicolunacv.pdf'
+            download='FedericoLuna-CV.pdf'
         >
             Descargar CV
         </Button>
