@@ -40,7 +40,7 @@ export const Menu = ({ onClose }) => {
             color={'white'}
             _hover={{ bg: 'primary.100' }}
             as='a'
-            href='../download/federicolunacv.pdf'
+            href='/FedericoLuna-CV.pdf'
             download='FedericoLuna-CV.pdf'
         >
             Descargar CV
