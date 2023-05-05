@@ -1,10 +1,49 @@
 /* eslint-disable react/react-in-jsx-scope */
-import { Heading, Image, Stack, Text } from '@chakra-ui/react'
+import { Heading, Image, Stack, Text, Tooltip, useColorModeValue } from '@chakra-ui/react'
+
+const TECHNOLOGIES = [
+  {
+    name: 'HTML',
+    src: '/images/icons/html-5.svg'
+  },
+  {
+    name: 'CSS',
+    src: '/images/icons/css3.svg'
+  },
+  {
+    name: 'Javascript',
+    src: '/images/icons/javascript.svg'
+  },
+  {
+    name: 'Typescript',
+    src: '/images/icons/typescript.svg'
+  },
+  {
+    name: 'React',
+    src: '/images/icons/react.svg'
+  },
+  {
+    name: 'Nodejs',
+    src: '/images/icons/nodejs.svg'
+  },
+  {
+    name: 'Tailwind',
+    src: '/images/icons/tailwind.svg'
+  },
+  {
+    name: 'Chakra UI',
+    src: '/images/icons/chakraui.svg'
+  },
+  {
+    name: 'Nextjs',
+    src: '/images/icons/next-js.svg'
+  }
+]
 
 export const Technologies = () => {
   return (
     <Stack
-        bg={'secondary.900'}
+        bg={useColorModeValue('white', 'secondary.900')}
         minHeight={'100vh'}
         justify='center'
         align='center'
@@ -19,13 +58,11 @@ export const Technologies = () => {
         >
             Stack
         </Heading>
-        <Text
-          color='white'
-        >
+        <Text>
           Estas son las tecnologías con las que más cómodo me siento trabajando.
         </Text>
         <Stack
-          bg='secondary.500'
+          bg={useColorModeValue('white', 'secondary.900')}
           p={4}
           px={10}
           borderRadius='lg'
@@ -36,69 +73,24 @@ export const Technologies = () => {
           wrap='wrap'
           boxShadow='dark-lg'
         >
-          <Image
-            boxSize='50px'
-            src='/images/icons/html-5.svg'
-            alt='HTML5'
-          />
-          <Image
-            boxSize='45px'
-            src='/images/icons/css3.svg'
-            alt='css3'
-          />
-          <Image
-            boxSize='40px'
-            src='/images/icons/javascript.svg'
-            alt='javascript'
-          />
-          <Image
-            boxSize='45px'
-            src='/images/icons/react.svg'
-            alt='react'
-          />
-          <Image
-            boxSize='45px'
-            src='/images/icons/nodejs.svg'
-            alt='nodejs'
-          />
-          <Image
-            boxSize='45px'
-            src='/images/icons/tailwind.svg'
-            alt='tailwind'
-          />
-          <Image
-            boxSize='45px'
-            src='/images/icons/chakraui.svg'
-            alt='chakraui'
-          />
-        </Stack>
-        <Text
-          color='white'
-        >
-          Estas son algunas de las tecnologias que estoy interesando en aprender.
-        </Text>
-        <Stack
-          bg='secondary.500'
-          p={4}
-          px={10}
-          borderRadius='lg'
-          align='center'
-          justify='space-evenly'
-          direction='row'
-          gap={5}
-          wrap='wrap'
-          boxShadow='dark-lg'
-        >
-          <Image
-            boxSize='45px'
-            src='/images/icons/typescript.svg'
-            alt='chakraui'
-          />
-          <Image
-            boxSize='45px'
-            src='/images/icons/next-js.svg'
-            alt='chakraui'
-          />
+          {
+            TECHNOLOGIES.map((tech, index) => (
+              <Tooltip
+                key={tech.name}
+                label={tech.name}
+                placement='top'
+                bg='primary.500'
+                hasArrow
+                arrowSize={10}
+              >
+                <Image
+                  boxSize={index === 0 ? '50px' : '45px'}
+                  src={tech.src}
+                  alt={tech.name}
+                />
+              </Tooltip>
+            ))
+          }
         </Stack>
     </Stack>
   )

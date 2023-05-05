@@ -21,6 +21,9 @@ export const NavBar = () => {
         as={'h1'}
         size={'lg'}
         color='primary.500'
+        cursor='pointer'
+        _hover={{ color: 'primary.100' }}
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       >
         Portfolio
       </Heading>

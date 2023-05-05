@@ -1,4 +1,4 @@
-import { Heading, Stack, Image, FormControl, FormLabel, Input, Textarea, Button, useToast } from '@chakra-ui/react'
+import { Heading, Stack, Image, FormControl, FormLabel, Input, Textarea, Button, useToast, useColorModeValue } from '@chakra-ui/react'
 import { useState } from 'react'
 import { Networks } from './Networks'
 import emailjs from '@emailjs/browser'
@@ -56,7 +56,7 @@ export const ContactMe = () => {
     <Stack
         id='contact'
         minHeight={'100vh'}
-        bg={'secondary.900'}
+        bg={useColorModeValue('white', 'secondary.900')}
         align='center'
         justify='center'
         gap={20}
@@ -71,7 +71,7 @@ export const ContactMe = () => {
             Contacto
         </Heading>
         <Stack
-            bg='secondary.500'
+            bg={useColorModeValue('white', 'secondary.500')}
             borderRadius='lg'
             align='center'
             boxShadow='dark-lg'
@@ -81,7 +81,6 @@ export const ContactMe = () => {
             <Heading
                 as='h4'
                 size='md'
-                color='white'
                 fontWeight='normal'
                 textAlign='center'
             >
@@ -99,7 +98,7 @@ export const ContactMe = () => {
         </Stack>
         <Stack
             p={5}
-            bg='secondary.500'
+            bg={useColorModeValue('white', 'secondary.500')}
             borderRadius='lg'
             align='center'
             gap={5}
@@ -108,7 +107,7 @@ export const ContactMe = () => {
             <Heading
                 as='h4'
                 size='md'
-                color='white'
+                color='font'
                 fontWeight='normal'
             >
                 Escribime un Email
@@ -133,51 +132,49 @@ export const ContactMe = () => {
                         w={{ base: 200, md: 400 }}
                         onSubmit={handleSubmit}
                     >
-                        <FormLabel
-                            color='white'
-                        >
+                        <FormLabel>
                             Nombre
                         </FormLabel>
                         <Input
-                            bg='secondary.100'
-                            color='white'
+                            bg={useColorModeValue('gray.100', 'secondary.100')}
+                            color='font'
                             focusBorderColor='primary.500'
                             border='none'
                             placeholder='Ingrese su nombre...'
-                            _placeholder={{ color: 'white' }}
+                            _placeholder={{ color: 'font' }}
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                         />
                         <FormLabel
-                            color='white'
+                            color='font'
                             mt={3}
                         >
                             Email
                         </FormLabel>
                         <Input
                             type='email'
-                            bg='secondary.100'
-                            color='white'
+                            bg={useColorModeValue('gray.100', 'secondary.100')}
+                            color='font'
                             focusBorderColor='primary.500'
                             border='none'
                             placeholder='Ingrese su correo...'
-                            _placeholder={{ color: 'white' }}
+                            _placeholder={{ color: 'font' }}
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                         />
                         <FormLabel
-                            color='white'
+                            color='font'
                             mt={3}
                         >
                             Mensaje
                         </FormLabel>
                         <Textarea
                             placeholder='Ingrese su mensaje...'
-                            bg='secondary.100'
-                            color='white'
+                            bg={useColorModeValue('gray.100', 'secondary.100')}
+                            color='font'
                             focusBorderColor='primary.500'
                             border='none'
-                            _placeholder={{ color: 'white' }}
+                            _placeholder={{ color: 'font' }}
                             rows={5}
                             resize='none'
                             value={message}

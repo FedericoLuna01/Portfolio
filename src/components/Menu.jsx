@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/react-in-jsx-scope */
 import { Button, Link } from '@chakra-ui/react'
+import ToggleColorMode from './ToggleColorMode'
 
 const MENU_ITEMS = [
   {
@@ -26,7 +27,6 @@ export const Menu = ({ onClose }) => {
     <>
         {MENU_ITEMS.map((item, index) => (
             <Link
-                color='white'
                 key={`${item.section}-${index}`}
                 href={item.section}
                 alt={item.title}
@@ -35,9 +35,10 @@ export const Menu = ({ onClose }) => {
                 {item.title}
             </Link>
         ))}
+        <ToggleColorMode />
         <Button
             bg={'primary.500'}
-            color={'white'}
+            color={'fontColor.100'}
             _hover={{ bg: 'primary.100' }}
             as='a'
             href='/FedericoLuna-CV.pdf'

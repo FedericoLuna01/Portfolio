@@ -1,12 +1,12 @@
 /* eslint-disable react/react-in-jsx-scope */
-import { Heading, Image, Stack } from '@chakra-ui/react'
+import { Heading, Image, Stack, useColorModeValue } from '@chakra-ui/react'
 import { Networks } from './Networks'
 
 export const Hero = () => {
   return (
         <Stack
-            bg={'secondary.900'}
             minH={'100vh'}
+            bg={useColorModeValue('white', 'secondary.900')}
             direction={{ base: 'column', md: 'row' }}
             align='center'
             justify={{ base: 'center', md: 'space-between' }}
@@ -23,7 +23,7 @@ export const Hero = () => {
                     as={'h1'}
                 >
                     <span
-                        style={{ color: 'white' }}
+                        style={{ color: 'fontColor.100' }}
                     >
                         Hola, soy {' '}
                     </span>
@@ -31,7 +31,6 @@ export const Hero = () => {
                 </Heading>
                 <Heading
                     as={'h2'}
-                    color={'white'}
                     size={'md'}
                     fontWeight={'normal'}
                 >

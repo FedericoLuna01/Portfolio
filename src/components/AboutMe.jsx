@@ -1,11 +1,11 @@
 /* eslint-disable react/react-in-jsx-scope */
-import { Heading, Stack, Image, Text } from '@chakra-ui/react'
+import { Heading, Stack, Image, Text, useColorModeValue } from '@chakra-ui/react'
 
 export const AboutMe = () => {
   return (
         <Stack
             minHeight={'100vh'}
-            bg={'secondary.900'}
+            bg={useColorModeValue('white', 'secondary.900')}
             align='center'
             justify='center'
             gap={20}
@@ -29,7 +29,6 @@ export const AboutMe = () => {
                         boxSize={{ base: '300px', lg: '400px' }}
                     />
                 <Text
-                    color="white"
                     maxW={{ base: '100%', md: '50%' }}
                     fontSize={{ base: 'md', md: 'lg' }}
                 >

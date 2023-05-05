@@ -21,13 +21,13 @@ export const projects = [
   },
   {
     id: 3,
-    name: 'Countries Rest',
-    description: 'Esta aplicación es un challenge de FrontEndMentor, donde se consume la api de Rest Countries. Se permite buscar países, filtrarlos por region y ver sus detalles. El proyecto fue desarrollado con React y Chakra UI.',
-    technologies: ['React', 'Chakra UI'],
-    thumbnail: '/images/CountriesRest-1.png',
-    carousel_images: ['/images/CountriesRest-1.png', '/images/CountriesRest-2.png', '/images/CountriesRest-3.png', '/images/CountriesRest-4.png'],
-    web: 'https://findyourcontry.netlify.app',
-    github: 'https://github.com/FedericoLuna01/CountriesApp'
+    name: 'Airbnb clon',
+    description: 'Esta página web es un clon de Airbnb. El proyecto fue desarrollado con React, Tailwind y NextJS. La aplicación permite buscar alojamientos y ver sus detalles. Contiene la funcionalidad de login, guardar favoritos, aplicar filtros, reservas, subir tu propio alojamiento. En cuanto al BackEnd está desarrollado con Prisma, MongoDB.',
+    technologies: ['React', 'Tailwind', 'Prisma', 'MongoDB', 'NextJS'],
+    thumbnail: '/images/airbnb-clon-5.jpeg',
+    carousel_images: ['/images/airbnb-clon-1.jpeg', '/images/airbnb-clon-2.jpeg', '/images/airbnb-clon-3.jpeg', '/images/airbnb-clon-4.jpeg', '/images/airbnb-clon-5.jpeg'],
+    web: 'https://proyecto-clon-viajes.vercel.app/',
+    github: 'https://github.com/FedericoLuna01/Airbnb-copy'
   }
 ]
 
@@ -43,7 +43,7 @@ export const moreProjects = [
     github: 'https://github.com/FedericoLuna01/Cryptocurrencies'
   },
   {
-    id: 3,
+    id: 2,
     name: 'Asistente de Pacientes',
     description: 'Esta aplicación fue creada en el curso de JavaScript de Juan Pablo de la Torre Valdez. La aplicación permite crear, editar y eliminar pacientes. El proyecto fue desarrollado con React, Tailwind. Contiene rutas protegidas y un login, donde cada persona puede crear una cuenta y guardar sus pacientes. En cuanto al BackEnd está desarrollado con express y mongoDB.',
     technologies: ['React', 'Tailwind', 'MongoDB'],
@@ -64,13 +64,13 @@ export const moreProjects = [
   },
   {
     id: 4,
-    name: 'Buscador de Recetas',
-    description: 'Esta aplicación fue desarrollada en el curso de Udemy de JavaScript de Juan Pablo de la Torre Valdez. La aplicación consume la API de TheMealDB y permite buscar recetas de comida. El proyecto fue desarrollado con JavaScript Vanilla y Bootsrap.',
-    technologies: ['HTML', 'Javascript', 'Bootsrap'],
-    thumbnail: '/images/BuscadorRecetas-1.png',
-    carousel_images: ['/images/BuscadorRecetas-1.png', '/images/BuscadorRecetas-2.png', '/images/BuscadorRecetas-3.png', '/images/BuscadorRecetas-4.png'],
-    web: 'https://recetazas.netlify.app',
-    github: 'https://github.com/FedericoLuna01/BuscadorDeRecetas'
+    name: 'Countries Rest',
+    description: 'Esta aplicación es un challenge de FrontEndMentor, donde se consume la api de Rest Countries. Se permite buscar países, filtrarlos por region y ver sus detalles. El proyecto fue desarrollado con React y Chakra UI.',
+    technologies: ['React', 'Chakra UI'],
+    thumbnail: '/images/CountriesRest-1.png',
+    carousel_images: ['/images/CountriesRest-1.png', '/images/CountriesRest-2.png', '/images/CountriesRest-3.png', '/images/CountriesRest-4.png'],
+    web: 'https://findyourcontry.netlify.app',
+    github: 'https://github.com/FedericoLuna01/CountriesApp'
   },
   {
     id: 5,

@@ -1,5 +1,5 @@
 /* eslint-disable react/react-in-jsx-scope */
-import { Button, Collapse, Heading, Stack } from '@chakra-ui/react'
+import { Button, Collapse, Heading, Stack, useColorModeValue } from '@chakra-ui/react'
 import { ProjectCard } from './ProjectCard'
 import { projects, moreProjects } from '../data/data'
 import { useState } from 'react'
@@ -14,7 +14,7 @@ export const Projects = () => {
     <Stack
         id='projects'
         minHeight={'100vh'}
-        bg={'secondary.900'}
+        bg={useColorModeValue('white', 'secondary.900')}
         align='center'
         justify='center'
         gap={20}
@@ -42,9 +42,10 @@ export const Projects = () => {
                     wrap='wrap'
                     justify='space-evenly'
                     direction={{ base: 'column', md: 'row' }}
+                    pb={12}
                 >
                     {
-                        moreProjects.map(project => <ProjectCard key={project.id} animation='animate__animated animate__fadeOut' project={project}/>)
+                        moreProjects.map(project => <ProjectCard key={project.id} project={project}/>)
                     }
                 </Stack>
             </Collapse>

@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/react-in-jsx-scope */
-import { Badge, Button, ButtonGroup, Card, CardBody, CardFooter, Heading, Image, Link, LinkBox, LinkOverlay, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Stack, Text, useDisclosure } from '@chakra-ui/react'
+import { Badge, Button, ButtonGroup, Card, CardBody, CardFooter, Heading, Image, Link, LinkBox, LinkOverlay, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Stack, Text, useDisclosure, useColorModeValue } from '@chakra-ui/react'
 import Carousel from 'nuka-carousel/lib/carousel'
 import { getTechnologyColor } from '../helpers/getColor'
 
@@ -8,11 +8,10 @@ export const ProjectCard = ({ project }) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   return (
         <Card
-            bg='secondary.500'
-            // maxW={{ base: '300px', sm: 'sm' }}
+            bg={useColorModeValue('white', 'secondary.500')}
             maxW='sm'
             zIndex={1}
-            boxShadow='dark-lg'
+            boxShadow={useColorModeValue('lg', 'dark-lg')}
         >
             <CardBody>
                 <LinkBox>
@@ -33,7 +32,6 @@ export const ProjectCard = ({ project }) => {
                     gap={1}
                 >
                     <Heading
-                        color='white'
                         as='h4'
                         fontSize='25px'
                         mt={3}
@@ -48,15 +46,15 @@ export const ProjectCard = ({ project }) => {
                         {
                             project.technologies.map((technology, index) => (
                                 <Badge
-                            key={index}
-                            variant='outline'
-                            colorScheme={ getTechnologyColor(technology) }
-                            borderRadius={4}
-                            px='5px'
-                            py='2px'
-                        >
-                            {technology}
-                        </Badge>
+                                    key={index}
+                                    variant='outline'
+                                    colorScheme={ getTechnologyColor(technology) }
+                                    borderRadius={4}
+                                    px='5px'
+                                    py='2px'
+                                >
+                                    {technology}
+                                </Badge>
                             ))
                         }
                     </Stack>
@@ -64,12 +62,13 @@ export const ProjectCard = ({ project }) => {
                         color='primary.100'
                         fontWeight='bold'
                         onClick={onOpen}
+                        width='fit-content'
                     >
                         Mas información...
                     </Link>
                     <Modal isOpen={isOpen} onClose={onClose} size='md'>
                         <ModalOverlay />
-                        <ModalContent bg='secondary.500' color='white'>
+                        <ModalContent bg={useColorModeValue('white', 'secondary.500')}>
                         <ModalHeader>{ project.name }</ModalHeader>
                         <ModalCloseButton />
                         <ModalBody>
@@ -92,10 +91,10 @@ export const ProjectCard = ({ project }) => {
                                 {
                                     project.carousel_images.map((image, index) => (
                                         <img
-                                        key={index}
-                                        src={image}
-                                        alt={`carousel image 
-                                        ${index}`}
+                                            key={index}
+                                            src={image}
+                                            alt={`carousel image ${index}`}
+                                            height='300px'
                                         />
                                     ))
                                 }
@@ -112,6 +111,7 @@ export const ProjectCard = ({ project }) => {
                                 _hover={{ bg: 'primary.100' }}
                                 mr={3}
                                 onClick={onClose}
+                                color='white'
                             >
                                 Cerrar
                             </Button>
@@ -124,7 +124,7 @@ export const ProjectCard = ({ project }) => {
                     >
                         <ButtonGroup
                             flex={1}
-                            color= 'white'
+                            color='white'
                         >
                             <Button
                                 href={ project.github }
